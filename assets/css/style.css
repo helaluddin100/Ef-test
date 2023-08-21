@@ -38,14 +38,17 @@ svg {
 
 .badge {
   display: inline-block;
-  padding: 4px 6px 4px 10px;
   background-color: #ff5411;
-  border-radius: 6px;
   font-size: 14px;
   font-weight: 500;
   color: #fff;
   position: relative;
   z-index: 1;
+  -webkit-clip-path: polygon(0 0, 82% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 82% 0, 100% 100%, 0 100%);
+  border-radius: 5px;
+  padding: 5px 10px;
+  padding-right: 20px;
 }
 .badge:after {
   position: absolute;
@@ -90,6 +93,8 @@ header {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.35), transparent);
   position: relative;
   z-index: 55;
+  position: absolute;
+  width: 100%;
 }
 header .header-section {
   display: flex;
@@ -301,9 +306,6 @@ header nav ul.nav-primary .search-toggler button {
   padding: 8px;
   line-height: 1.1;
 }
-.dropdown-menu .block-links a:hover {
-  background-color: rgba(255, 255, 255, 0.1490196078);
-}
 .dropdown-menu .block-links.platforms a {
   display: flex;
   align-items: center;
@@ -501,21 +503,17 @@ header nav ul.nav-primary .search-toggler button {
   position: relative;
   z-index: 1;
   overflow: hidden;
-}
-.banner-section:after {
-  position: absolute;
-  content: "";
-  height: 300px;
-  width: 100%;
-  left: 0;
-  bottom: -250px;
-  background-color: #272726;
-  z-index: -1;
-  transform: skewY(3deg);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 93%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 93%);
 }
 
 .banner-wrapper {
-  padding: 120px 0 200px;
+  padding: 200px 0;
+}
+@media screen and (max-width: 992px) {
+  .banner-wrapper {
+    padding: 150px 0 200px;
+  }
 }
 .banner-wrapper .banner-content {
   max-width: 500px;
@@ -590,6 +588,7 @@ header nav ul.nav-primary .search-toggler button {
 
 .product-section {
   padding: 0 0 30px;
+  margin-top: 20px;
 }
 
 .product-row {
@@ -601,9 +600,6 @@ header nav ul.nav-primary .search-toggler button {
 .product-row .card > a {
   display: block;
   color: #fff;
-}
-.product-row .card:hover .card-image img {
-  transform: scale(1.03);
 }
 .product-row .card-image {
   position: relative;

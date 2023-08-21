@@ -55,14 +55,17 @@ svg {
 }
 .badge {
   display: inline-block;
-  padding: 4px 6px 4px 10px;
-  background-color: $background-color_2;
-  border-radius: 6px;
+  background-color: #ff5411;
   font-size: 14px;
   font-weight: 500;
-  color: $color_1;
+  color: #fff;
   position: relative;
   z-index: 1;
+  -webkit-clip-path: polygon(0 0, 82% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 82% 0, 100% 100%, 0 100%);
+  border-radius: 5px;
+  padding: 5px 10px;
+  padding-right: 20px;
   &:after {
     position: absolute;
     content: "";
@@ -109,6 +112,8 @@ header {
   );
   position: relative;
   z-index: 55;
+  position: absolute;
+  width: 100%;
   .header-section {
     display: flex;
     justify-content: space-between;
@@ -324,9 +329,6 @@ header {
       color: $color_1;
       padding: 8px;
       line-height: 1.1;
-      &:hover {
-        background-color: $background-color_8;
-      }
     }
   }
   .block-links.platforms {
@@ -525,22 +527,18 @@ header {
   position: relative;
   z-index: 1;
   overflow: hidden;
-  &:after {
-    position: absolute;
-    content: "";
-    height: 300px;
-    width: 100%;
-    left: 0;
-    bottom: -250px;
-    background-color: $background-color_1;
-    z-index: -1;
-    transform: skewY(3deg);
-  }
+
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 93%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 93%);
 }
 .banner-wrapper {
-  padding: 120px 0 200px;
+  padding: 200px 0;
+  @media screen and (max-width: 992px) {
+    padding: 150px 0 200px;
+  }
   .banner-content {
     max-width: 500px;
+
     .small-title {
       margin-bottom: 20px;
       background-color: $background-color_13;
@@ -615,6 +613,7 @@ header {
 }
 .product-section {
   padding: 0 0 30px;
+  margin-top: 20px;
 }
 .product-row {
   display: grid;
@@ -625,13 +624,6 @@ header {
     > a {
       display: block;
       color: $color_1;
-    }
-    &:hover {
-      .card-image {
-        img {
-          transform: scale(1.03);
-        }
-      }
     }
   }
   .card-image {
